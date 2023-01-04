@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.4.613.9944",
-      "templateHash": "16592326996023739709"
+      "version": "0.9.1.41621",
+      "templateHash": "4174347935626855784"
     }
   },
   "parameters": {
@@ -33,7 +33,6 @@
       ]
     }
   },
-  "functions": [],
   "variables": {
     "policyName": "policy-naming-convention-log",
     "assignmentName": "assignment-naming-convention-log",

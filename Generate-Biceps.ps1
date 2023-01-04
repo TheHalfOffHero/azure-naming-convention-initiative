@@ -1,38 +1,38 @@
 $ps = @(
     ### General
     @('mg','mg-*','Microsoft.Management/managementGroups'),
-    @('rg','rg-*','Microsoft.Resources/subscriptions/resourceGroups'),
-    @('policy','policy-*','Microsoft.Authorization/policyDefinitions'),
-    @('apim','apim-*','Microsoft.ApiManagement/service'),
-    @('id','id-*','Microsoft.ManagedIdentity/userAssignedIdentities'),
+    @('rg','rg-*','Microsoft.Resources/subscriptions/resourceGroups')
+    # @('policy','policy-*','Microsoft.Authorization/policyDefinitions'),
+    # @('apim','apim-*','Microsoft.ApiManagement/service'),
+    # @('id','id-*','Microsoft.ManagedIdentity/userAssignedIdentities'),
 
     ### Networking
-    @('vnet','vnet-*','Microsoft.Network/virtualNetworks'),
-    @('snet','snet-*','Microsoft.Network/virtualNetworks/subnets'),
-    @('peer','peer-*','Microsoft.Network/virtualNetworks/virtualNetworkPeerings'),
-    @('nic','nic-*','Microsoft.Network/networkInterfaces'),
-    @('pip','pip-*','Microsoft.Network/publicIPAddresses'),
+    # @('vnet','vnet-*','Microsoft.Network/virtualNetworks'),
+    # @('snet','snet-*','Microsoft.Network/virtualNetworks/subnets'),
+    # @('peer','peer-*','Microsoft.Network/virtualNetworks/virtualNetworkPeerings'),
+    # @('nic','nic-*','Microsoft.Network/networkInterfaces'),
+    # @('pip','pip-*','Microsoft.Network/publicIPAddresses'),
     #@('lbi','lbi-*','Microsoft.Network/loadBalancers'),
     #@('lbe','lbe-*','Microsoft.Network/loadBalancers'),
-    @('nsg','nsg-*','Microsoft.Network/networkSecurityGroups'),
-    @('asg','asg-*','Microsoft.Network/applicationSecurityGroups'),
-    @('lgw','lgw-*','Microsoft.Network/localNetworkGateways'),
-    @('vgw','vgw-*','Microsoft.Network/virtualNetworkGateways'),
-    @('cn','cn-*','Microsoft.Network/vpnGateways/vpnConnections'),
-    @('erc','erc-*','Microsoft.Network/expressRouteCircuits'),
-    @('agw', 'agw-*', 'Microsoft.Network/applicationGateways'),
-    @('route', 'route-*', 'Microsoft.Network/routeTables'),
-    @('udr','udr-*','Microsoft.Network/routeTables/routes'),
-    @('traf','traf-*','Microsoft.Network/trafficmanagerprofiles'),
-    @('fd','fd-*','Microsoft.Network/frontDoors'),
-    @('cdnp','cdnp-*','Microsoft.Cdn/profiles'),
-    @('cdne','cdne-*','microsoft.cdn/profiles/endpoints'),
-    @('waf','waf-*','Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies'),
+    # @('nsg','nsg-*','Microsoft.Network/networkSecurityGroups'),
+    # @('asg','asg-*','Microsoft.Network/applicationSecurityGroups'),
+    # @('lgw','lgw-*','Microsoft.Network/localNetworkGateways'),
+    # @('vgw','vgw-*','Microsoft.Network/virtualNetworkGateways'),
+    # @('cn','cn-*','Microsoft.Network/vpnGateways/vpnConnections'),
+    # @('erc','erc-*','Microsoft.Network/expressRouteCircuits'),
+    # @('agw', 'agw-*', 'Microsoft.Network/applicationGateways'),
+    # @('route', 'route-*', 'Microsoft.Network/routeTables'),
+    # @('udr','udr-*','Microsoft.Network/routeTables/routes'),
+    # @('traf','traf-*','Microsoft.Network/trafficmanagerprofiles'),
+    # @('fd','fd-*','Microsoft.Network/frontDoors'),
+    # @('cdnp','cdnp-*','Microsoft.Cdn/profiles'),
+    # @('cdne','cdne-*','microsoft.cdn/profiles/endpoints'),
+    # @('waf','waf-*','Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies'),
 
     ### Compute and Web
-    @('vm','vm*','Microsoft.Compute/virtualMachines'),
-    @('vmss','vmss-*','Microsoft.Compute/virtualMachineScaleSets'),
-    @('avail','avail-*','Microsoft.Compute/availabilitySets'),
+    # @('vm','vm*','Microsoft.Compute/virtualMachines'),
+    # @('vmss','vmss-*','Microsoft.Compute/virtualMachineScaleSets'),
+    # @('avail','avail-*','Microsoft.Compute/availabilitySets'),
     #@('osdisk','osdisk-*',''),
     #@('disk','disk-*',''),
     #@('stvm','stvm-*',''),
@@ -40,35 +40,35 @@ $ps = @(
     #@('arck','arck',''),
     #@('cr','cr',''),
     #@('ci','ci-*',''),
-    @('aks','aks-*','Microsoft.ContainerService/managedClusters'),
+    # @('aks','aks-*','Microsoft.ContainerService/managedClusters'),
     #@('sf','sf-*',''),
     #@('ase','ase-*',''),
     #@('stapp','stapp',''),
     #@('func','func-*','Microsoft.Web/sites'), kind: "functionapp"
     #@('cld','cld-*',''),
-    @('ntf','ntf-*','Microsoft.NotificationHubs/namespaces/notificationHubs'),
-    @('ntfns','ntfs-*','Microsoft.NotificationHubs/namespaces'),
+    # @('ntf','ntf-*','Microsoft.NotificationHubs/namespaces/notificationHubs'),
+    # @('ntfns','ntfs-*','Microsoft.NotificationHubs/namespaces'),
 
     # One-of templates not based on module
     #@('plan','plan-*','Microsoft.Web/serverfarms'),    
     #@('app','app-*','Microsoft.Web/sites'), 
 
     ### Databases 
-    @('sql','sql-*','Microsoft.Sql/servers'),
-    @('sqldb','sqldb-*','Microsoft.Sql/servers/databases'),
-    @('cosmos','cosmos-*','Microsoft.DocumentDB/databaseAccounts'),
-    @('redis','redis-*','Microsoft.Cache/Redis'),
-    @('mysql','mysql-*','Microsoft.DBforMySQL/servers'),
-    @('psql','psql-*','Microsoft.DBforPostgreSQL/servers'),
+    # @('sql','sql-*','Microsoft.Sql/servers'),
+    # @('sqldb','sqldb-*','Microsoft.Sql/servers/databases'),
+    # @('cosmos','cosmos-*','Microsoft.DocumentDB/databaseAccounts'),
+    # @('redis','redis-*','Microsoft.Cache/Redis'),
+    # @('mysql','mysql-*','Microsoft.DBforMySQL/servers'),
+    # @('psql','psql-*','Microsoft.DBforPostgreSQL/servers'),
     #@('sqldw','sqldw-*',''),
     #@('syn','syn-*',''),
     #@('sqlstrdb','sqlstrdb-*',''),
-    @('sqlmi','sqlmi-*','Microsoft.Sql/managedInstances'),
+    # @('sqlmi','sqlmi-*','Microsoft.Sql/managedInstances'),
 
     ### Storage
-    @('st','st*','Microsoft.Storage/storageAccounts'),
+    # @('st','st*','Microsoft.Storage/storageAccounts'),
     #@('ssimp','ssimp*',''),
-    @('acr','acr*','Microsoft.ContainerRegistry/registries'),
+    # @('acr','acr*','Microsoft.ContainerRegistry/registries'),
 
     ### AI and Machine Learning
     #@('srch','srch-*',''),
@@ -83,10 +83,10 @@ $ps = @(
     #@('adf','adf-*',''),
     #@('dls','dls-*',''),
     #@('dla','dla*',''),
-    @('evhns','evhns-*','Microsoft.EventHub/namespaces'),
-    @('evh','evh-*','Microsoft.EventHub/namespaces/eventhubs'),
-    @('evgd','evgd-*','Microsoft.EventGrid/domains'),
-    @('evgt','evgt-*','Microsoft.EventGrid/topics'),
+    # @('evhns','evhns-*','Microsoft.EventHub/namespaces'),
+    # @('evh','evh-*','Microsoft.EventHub/namespaces/eventhubs'),
+    # @('evgd','evgd-*','Microsoft.EventGrid/domains'),
+    # @('evgt','evgt-*','Microsoft.EventGrid/topics'),
     #@('hadoop','hadoop-*',''),
     #@('hbase','hbase-*',''),
     #@('kafka','kafka-*',''),
@@ -98,33 +98,33 @@ $ps = @(
     #@('tsi','tsi-*',''),
 
     ### Developer tools
-    @('appcs','appcs-*','Microsoft.AppConfiguration/configurationStores'),
-    @('stap','stap-*','Microsoft.Web/staticSites'),
+    # @('appcs','appcs-*','Microsoft.AppConfiguration/configurationStores'),
+    # @('stap','stap-*','Microsoft.Web/staticSites'),
 
     ### Integration
-    @('ia','ia-*','Microsoft.Logic/integrationAccounts'),
-    @('logic','logic-*','Microsoft.Logic/workflows'),
-    @('sb','sb-*','Microsoft.ServiceBus/namespaces'),
-    @('sbq','sbq-*','Microsoft.ServiceBus/namespaces/queues'),
-    @('sbt','sbt-*','Microsoft.ServiceBus/namespaces/topics'),
+    # @('ia','ia-*','Microsoft.Logic/integrationAccounts'),
+    # @('logic','logic-*','Microsoft.Logic/workflows'),
+    # @('sb','sb-*','Microsoft.ServiceBus/namespaces'),
+    # @('sbq','sbq-*','Microsoft.ServiceBus/namespaces/queues'),
+    # @('sbt','sbt-*','Microsoft.ServiceBus/namespaces/topics'),
 
     ### Management and governance
-    @('aa','aa-*','Microsoft.Automation/automationAccounts'),
+    # @('aa','aa-*','Microsoft.Automation/automationAccounts'),
     #@('ag','ag-*',''),
     #@('pview','pview-*',''),
     #@('bp','bp-*',''),
     #@('bpa','bpa-*',''),
-    @('kv','kv-*','Microsoft.KeyVault/vaults'),
+    # @('kv','kv-*','Microsoft.KeyVault/vaults'),
     
     # One-off template not based on module
     #@('log','log-*','Microsoft.OperationalInsights/workspaces'),
 
-    @('appi','appi-*','Microsoft.Insights/components'),
+    # @('appi','appi-*','Microsoft.Insights/components'),
 
     ### Migration
     #@('migr','migr-*',''),
-    @('dms','dms-*','Microsoft.DataMigration/services'),
-    @('rsv','rsv-*','Microsoft.RecoveryServices/vaults')
+    # @('dms','dms-*','Microsoft.DataMigration/services'),
+    # @('rsv','rsv-*','Microsoft.RecoveryServices/vaults')
 )
 
 foreach ($p in $ps)

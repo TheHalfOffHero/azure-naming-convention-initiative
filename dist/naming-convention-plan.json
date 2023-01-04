@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.4.613.9944",
-      "templateHash": "8502511442360145997"
+      "version": "0.9.1.41621",
+      "templateHash": "2680828377266803384"
     }
   },
   "parameters": {
@@ -33,7 +33,6 @@
       ]
     }
   },
-  "functions": [],
   "variables": {
     "policyName": "policy-naming-convention-plan",
     "assignmentName": "assignment-naming-convention-plan",

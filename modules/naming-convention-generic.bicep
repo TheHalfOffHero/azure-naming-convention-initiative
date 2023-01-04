@@ -4,6 +4,15 @@ param policyName string
 param assignmentName string
 param type string
 
+@description('allowed environment prefixes')
+param envAffixArray array = [
+  '*dv'
+  '*pd'
+  '*sg'
+  '*sg'
+  '*ts'
+]
+
 @allowed([
   'Deny'
   'Audit'
@@ -26,14 +35,28 @@ resource genericPolicy 'Microsoft.Authorization/policyDefinitions@2020-03-01' = 
     mode: 'All'
     policyRule: {
       if: {
-        allOf: [
-          {
-            field: 'type'
-            equals: type
+        anyOf: [
+            {
+              allOf: [
+              {
+                field: 'type'
+                equals: type
+              }
+              {
+                field: 'name'
+                notLike: pattern
+              }
+            ]
           }
           {
-            field: 'name'
-            notLike: pattern
+            count: {
+              value: envAffixArray
+              where: {
+                field: 'name'
+                like: '[current()]'
+              }
+            }
+            less: 1
           }
         ]
       }

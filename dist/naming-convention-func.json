@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.4.613.9944",
-      "templateHash": "9765766322950368659"
+      "version": "0.9.1.41621",
+      "templateHash": "1607600358372999208"
     }
   },
   "parameters": {
@@ -37,7 +37,6 @@
       ]
     }
   },
-  "functions": [],
   "variables": {
     "version": "0.1.0"
   },
