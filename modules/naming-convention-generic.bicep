@@ -5,13 +5,22 @@ param assignmentName string
 param type string
 
 @description('allowed environment prefixes')
-param envAffixArray array = [
+param envAffixArray array = contains(policyName, 'policy-naming-convention-rg') ? [
   '*dv'
   '*pd'
   '*sg'
   '*sg'
   '*ts'
+] : [
+  'dv*'
+  'pd*'
+  'sg*'
+  'sg*'
+  'ts*'
 ]
+
+//if policy name is rg we want to change the array values so the env affix is reversed
+
 
 @allowed([
   'Deny'
@@ -35,29 +44,32 @@ resource genericPolicy 'Microsoft.Authorization/policyDefinitions@2020-03-01' = 
     mode: 'All'
     policyRule: {
       if: {
-        anyOf: [
-            {
-              allOf: [
-              {
-                field: 'type'
-                equals: type
-              }
+        allOf: [
+            
+          {
+            field: 'type'
+            equals: type
+          }
+          {
+            anyOf: [
               {
                 field: 'name'
                 notLike: pattern
               }
+              
+              {
+                count: {
+                  value: envAffixArray
+                  where: {
+                    field: 'name'
+                    like: '[current()]'
+                  }
+                }
+                less: 1
+              }
             ]
           }
-          {
-            count: {
-              value: envAffixArray
-              where: {
-                field: 'name'
-                like: '[current()]'
-              }
-            }
-            less: 1
-          }
+          
         ]
       }
       then: {
