@@ -5,14 +5,14 @@
     "_generator": {
       "name": "bicep",
       "version": "0.9.1.41621",
-      "templateHash": "9647817755635376807"
+      "templateHash": "4063197825368832011"
     }
   },
   "resources": [
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2020-10-01",
-      "name": "policy-naming-convention-mg",
+      "name": "policy-naming-convention-s",
       "location": "[deployment().location]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -21,16 +21,16 @@
         "mode": "Incremental",
         "parameters": {
           "pattern": {
-            "value": "mg-*"
+            "value": "q"
           },
           "policyName": {
-            "value": "policy-naming-convention-mg"
+            "value": "policy-naming-convention-s"
           },
           "assignmentName": {
-            "value": "assignment-naming-convention-mg"
+            "value": "assignment-naming-convention-s"
           },
           "type": {
-            "value": "Microsoft.Management/managementGroups"
+            "value": "l"
           }
         },
         "template": {

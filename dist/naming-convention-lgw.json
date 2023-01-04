@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.9.1.41621",
-      "templateHash": "7261844646771923096"
+      "templateHash": "14404988277658037157"
     }
   },
   "resources": [
@@ -40,7 +40,7 @@
             "_generator": {
               "name": "bicep",
               "version": "0.9.1.41621",
-              "templateHash": "8459249183689866493"
+              "templateHash": "5987000286355963676"
             }
           },
           "parameters": {
@@ -58,13 +58,7 @@
             },
             "envAffixArray": {
               "type": "array",
-              "defaultValue": [
-                "*dv",
-                "*pd",
-                "*sg",
-                "*sg",
-                "*ts"
-              ],
+              "defaultValue": "[if(contains(parameters('policyName'), 'policy-naming-convention-rg'), createArray('*dv', '*pd', '*sg', '*sg', '*ts'), createArray('dv*', 'pd*', 'sg*', 'sg*', 'ts*'))]",
               "metadata": {
                 "description": "allowed environment prefixes"
               }
@@ -103,28 +97,28 @@
                 "mode": "All",
                 "policyRule": {
                   "if": {
-                    "anyOf": [
+                    "allOf": [
                       {
-                        "allOf": [
-                          {
-                            "field": "type",
-                            "equals": "[parameters('type')]"
-                          },
+                        "field": "type",
+                        "equals": "[parameters('type')]"
+                      },
+                      {
+                        "anyOf": [
                           {
                             "field": "name",
                             "notLike": "[parameters('pattern')]"
+                          },
+                          {
+                            "count": {
+                              "value": "[parameters('envAffixArray')]",
+                              "where": {
+                                "field": "name",
+                                "like": "[[current()]"
+                              }
+                            },
+                            "less": 1
                           }
                         ]
-                      },
-                      {
-                        "count": {
-                          "value": "[parameters('envAffixArray')]",
-                          "where": {
-                            "field": "name",
-                            "like": "[[current()]"
-                          }
-                        },
-                        "less": 1
                       }
                     ]
                   },

@@ -7,7 +7,7 @@ $ps = @(
     # @('id','id-*','Microsoft.ManagedIdentity/userAssignedIdentities'),
 
     ### Networking
-    # @('vnet','vnet-*','Microsoft.Network/virtualNetworks'),
+    @('vnet','*vnet','Microsoft.Network/virtualNetworks'),
     # @('snet','snet-*','Microsoft.Network/virtualNetworks/subnets'),
     # @('peer','peer-*','Microsoft.Network/virtualNetworks/virtualNetworkPeerings'),
     # @('nic','nic-*','Microsoft.Network/networkInterfaces'),
