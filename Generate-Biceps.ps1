@@ -1,7 +1,7 @@
 $ps = @(
     ### General
     @('mg','mg-*','Microsoft.Management/managementGroups'),
-    @('rg','rg-*','Microsoft.Resources/subscriptions/resourceGroups')
+    @('rg','rg-*','Microsoft.Resources/subscriptions/resourceGroups'),
     # @('policy','policy-*','Microsoft.Authorization/policyDefinitions'),
     # @('apim','apim-*','Microsoft.ApiManagement/service'),
     # @('id','id-*','Microsoft.ManagedIdentity/userAssignedIdentities'),
@@ -54,7 +54,7 @@ $ps = @(
     #@('app','app-*','Microsoft.Web/sites'), 
 
     ### Databases 
-    # @('sql','sql-*','Microsoft.Sql/servers'),
+    @('sql','*sdb','Microsoft.Sql/servers')
     # @('sqldb','sqldb-*','Microsoft.Sql/servers/databases'),
     # @('cosmos','cosmos-*','Microsoft.DocumentDB/databaseAccounts'),
     # @('redis','redis-*','Microsoft.Cache/Redis'),
